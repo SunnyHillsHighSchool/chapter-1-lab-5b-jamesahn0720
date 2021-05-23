@@ -1,4 +1,4 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//Â© A+ Computer Science  -  www.apluscompsci.com
 //Name -  
 //Date -
 //Class -
@@ -20,18 +20,18 @@ public class Grid
 	public Grid(int rows, int cols)
 	{
 
-
+ grid = new Drawable[rows][cols];
 	}
 
 	public void setSize(int rows, int cols)
 	{
 
-
+	 grid = new Drawable[rows][cols];
 	}
 
 	public void setSpot(int row,int col, Drawable val)
 	{
-
+grid[row][col] = val;
 
 	}
 	
@@ -42,38 +42,43 @@ public class Grid
 	
 	public int getNumRows()
 	{
-		return 0;
+		return grid.length;
 	}
 	
 	public int getNumCols()
 	{
-		return 0;
+		return grid[0].length;
 	}
 
 	public boolean drawGrid(Graphics window)
 	{
 		boolean full=true;
 		
-		//for loop for row
-
-
-			//for loop for col
-
-				//get current Drawable
-					//if it is null
-					
-					
-					//else
-
-
-
+	for(int r=0;r<grid.length;r++)
+     {
+      for(int c=0;c<grid[r].length;c++)
+      {
+        if(grid[r][c].equals(null))
+        {
+          full = false;
+        }else{
+          grid[r][c].draw(window);
+        }
+      }
+     }
 		return full;
 	}
 	
 	public String toString()
 	{
 		String output="";
-
+for(int r=0;r<grid.length;r++)
+     {
+      for(int c=0;c<grid[r].length;c++)
+      {
+        output += grid[r][c]+" ";
+      }
+     }
 
 
 
